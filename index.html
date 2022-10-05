@@ -265,7 +265,7 @@
     <!-- About End -->
 
     <!-- Facts Start -->
-    <div
+    <!-- <div
       class="container-xxl bg-primary facts my-5 py-5 wow fadeInUp"
       data-wow-delay="0.1s"
     >
@@ -285,7 +285,7 @@
           >
             <i class="fa fa-users fa-3x text-primary mb-3"></i>
             <h1 class="text-white mb-2" data-toggle="counter-up">12345</h1>
-            <p class="text-white mb-0">Daily Vigitors</p>
+            <p class="text-white mb-0">CLientes Satisfeitos</p>
           </div>
           <div
             class="col-md-6 col-lg-3 text-center wow fadeIn"
@@ -305,7 +305,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- Facts End -->
 
     <!-- Service Start -->
@@ -323,10 +323,11 @@
             <div
               class="bg-primary h-100 d-flex align-items-center py-4 px-4 px-sm-5"
             >
-              <i class="fa fa-3x fa-mobile-alt text-white"></i>
+              <i class="fa fa-3x fa-wallet text-white"></i>
               <div class="ms-4">
-                <p class="text-white mb-0">Call for more info</p>
-                <h2 class="text-white mb-0">+012 345 6789</h2>
+                <h5 class="text-white mb-0">
+                  Vários serviços para você ganhar bônus por indicação
+                </h5>
               </div>
             </div>
           </div>
@@ -501,55 +502,104 @@
         >
           Indique seu cliente
         </h1>
-        <div class="row">
-          <div class="col-12 col-md-6 mt-4">
-            <h5 class="mb-3">Seu Nome:</h5>
-            <input
-              class="form-control border-0 w-100 py-3 ps-4 pe-5"
-              type="text"
-              placeholder="Seu nome"
-            />
+        <form action="">
+          <div>
+            <h3 class="mb-3 wow fadeInUp" data-wow-delay="0.1s">
+              Informações de quem indica:
+            </h3>
+            <div class="row">
+              <div class="col-12 col-md-6 mt-4">
+                <h5 class="mb-3">Nome:</h5>
+                <input
+                  class="form-control border-0 w-100 py-3 ps-4 pe-5"
+                  type="text"
+                  placeholder="Seu nome"
+                />
+              </div>
+              <div class="col-12 col-md-6 mt-4">
+                <h5 class="mb-3">Telefone (Preferencialmente WhatsApp):</h5>
+                <input
+                  class="form-control border-0 w-100 py-3 ps-4 pe-5"
+                  type="phone"
+                  placeholder="Seu telefone"
+                />
+              </div>
+              <div class="col-12 col-md-6 mt-4">
+                <h5 class="mb-3">
+                  Como deseja receber o valor de sua indicação?
+                </h5>
+                <select class="py-3 ps-4 pe-5" name="" id="">
+                  <option value="ted">TED</option>
+                  <option value="pix">PIX</option>
+                </select>
+              </div>
+              <div class="col-12 col-md-6 mt-4">
+                <h5 class="mb-3">Tipo de chave PIX:</h5>
+                <select class="py-3 ps-4 pe-5" name="" id="">
+                  <option value="">CPF</option>
+                  <option value="">CNPJ</option>
+                  <option value="">Telefone</option>
+                  <option value="">Email</option>
+                  <option value="">Chave Aleatória</option>
+                </select>
+              </div>
+              <div class="col-12 col-md-6 mt-4">
+                <h5 class="mb-3">Chave PIX:</h5>
+                <input
+                  class="form-control border-0 w-100 py-3 ps-4 pe-5"
+                  type="text"
+                  placeholder="Chave PIX"
+                />
+              </div>
+              <div class="col-12 col-md-6 mt-4">
+                <h5 class="mb-3">Agência:</h5>
+                <input
+                  class="form-control border-0 w-100 py-3 ps-4 pe-5"
+                  type="text"
+                  placeholder="0000"
+                />
+              </div>
+              <div class="col-12 col-md-6 mt-4">
+                <h5 class="mb-3">Conta com dígito:</h5>
+                <input
+                  class="form-control border-0 w-100 py-3 ps-4 pe-5"
+                  type="text"
+                  placeholder="0000000-0"
+                />
+              </div>
+            </div>
           </div>
-          <div class="col-12 col-md-6 mt-4">
-            <h5 class="mb-3">Seu Email:</h5>
-            <input
-              class="form-control border-0 w-100 py-3 ps-4 pe-5"
-              type="text"
-              placeholder="Seu email"
-            />
+          <div>
+            <div class="row">
+              <h3 class="mb-3 wow fadeInUp" data-wow-delay="0.1s">
+                Informações do indicado:
+              </h3>
+              <div class="col-12 col-md-6 mt-4">
+                <h5 class="mb-3">Nome:</h5>
+                <input
+                  class="form-control border-0 w-100 py-3 ps-4 pe-5"
+                  type="text"
+                  placeholder="Seu nome"
+                />
+              </div>
+              <div class="col-12 col-md-6 mt-4">
+                <h5 class="mb-3">Escolha o serviço prestado:</h5>
+                <select class="py-3 ps-4 pe-5" name="" id="">
+                  <option value="">Mecânico</option>
+                  <option value="">fdsa</option>
+                </select>
+              </div>
+              <div class="col-12 col-md-6 mt-4">
+                <h5 class="mb-3">Telefone do Indicado:</h5>
+                <input
+                  class="form-control border-0 w-100 py-3 ps-4 pe-5"
+                  type="text"
+                  placeholder="Telefone"
+                />
+              </div>
+            </div>
           </div>
-          <div class="col-12 col-md-6 mt-4">
-            <h5 class="mb-3">Escolha o serviço prestado:</h5>
-            <select class="form-control py-3 ps-4 pe-5" name="" id="">
-              <option value="">Mecânico</option>
-              <option value="">fdsa</option>
-            </select>
-          </div>
-          <div class="col-12 col-md-6 mt-4">
-            <h5 class="mb-3">Seu Telefone:</h5>
-            <input
-              class="form-control border-0 w-100 py-3 ps-4 pe-5"
-              type="phone"
-              placeholder="Seu telefone"
-            />
-          </div>
-          <div class="col-12 col-md-6 mt-4">
-            <h5 class="mb-3">Nome do Indicado:</h5>
-            <input
-              class="form-control border-0 w-100 py-3 ps-4 pe-5"
-              type="text"
-              placeholder="Seu telefone"
-            />
-          </div>
-          <div class="col-12 col-md-6 mt-4">
-            <h5 class="mb-3">Telefone do Indicado:</h5>
-            <input
-              class="form-control border-0 w-100 py-3 ps-4 pe-5"
-              type="text"
-              placeholder="Telefone"
-            />
-          </div>
-        </div>
+        </form>
       </div>
     </div>
     <!-- Testimonial End -->
