@@ -103,7 +103,7 @@
   const phoneMaskIndicate = (valor) => {
     const valueOnlyNumbers = valor.replace(/\D/g, '');
     tel.value = valueOnlyNumbers;
-    const valueWithMask = (`(${valueOnlyNumbers.substring(0,2)}) ${valueOnlyNumbers.substring(2,7)}-${valueOnlyNumbers.substring(7,11)}`);
+    const valueWithMask = (`(${valueOnlyNumbers.substring(0, 2)}) ${valueOnlyNumbers.substring(2, 7)}-${valueOnlyNumbers.substring(7, 11)}`);
     console.log(valueWithMask.length);
     tel.value = valueWithMask;
     const ted = document.getElementsByClassName('form-check-inline');
@@ -123,4 +123,3 @@
   console.log(ted.value);
 
 })(jQuery);
-
