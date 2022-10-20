@@ -1,6 +1,6 @@
 /********** Template CSS **********/
 :root {
-  --primary: #dba633;
+  --primary: #F5821F;
   --light: #f3f4f5;
   --dark: #282f34;
 }
@@ -32,7 +32,7 @@
   position: fixed;
   width: 60px;
   height: 60px;
-  bottom: 100px;
+  bottom: 45px;
   right: 40px;
   background-color: #25d366;
   color: #fff;
