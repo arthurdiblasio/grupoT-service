@@ -98,28 +98,6 @@
     $("#video").attr('src', $videoSrc);
   })
 
-  const tel = document.getElementById('telefone-indicante')
-  tel.addEventListener('input', (e) => phoneMaskIndicate(e.target.value))
-  const phoneMaskIndicate = (valor) => {
-    const valueOnlyNumbers = valor.replace(/\D/g, '');
-    tel.value = valueOnlyNumbers;
-    const valueWithMask = (`(${valueOnlyNumbers.substring(0, 2)}) ${valueOnlyNumbers.substring(2, 7)}-${valueOnlyNumbers.substring(7, 11)}`);
-    console.log(valueWithMask.length);
-    tel.value = valueWithMask;
-    const ted = document.getElementsByClassName('form-check-inline');
-    console.log(ted.value);
-  }
-
-  // const telIndicated = document.getElementById('telefone-indicanted')
-  // telIndicated.addEventListener('input', (e) => phoneMaskIndicated(e.target.value))
-  // const phoneMaskIndicated = (valor) => {
-  //   const valueOnlyNumbers = valor.replace(/\D/g, '');
-  //   telIndicated.value = valueOnlyNumbers;
-  //   const valueWithMask = (`(${valueOnlyNumbers.substring(0,2)}) ${valueOnlyNumbers.substring(2,7)}-${valueOnlyNumbers.substring(7,11)}`);
-  //   telIndicated.value = valueWithMask;
-  // }
-
-  const ted = document.getElementsByClassName('form-check-inline');
-  console.log(ted.value);
-
 })(jQuery);
+
+

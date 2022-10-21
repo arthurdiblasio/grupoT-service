@@ -660,3 +660,7 @@
   -webkit-animation: animate-loading 1s linear infinite;
   animation: animate-loading 1s linear infinite;
 }
+
+.d-none {
+  display: none;
+}

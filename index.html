@@ -75,9 +75,9 @@
       </button>
       <div class="collapse navbar-collapse py-4 py-lg-0" id="navbarCollapse">
         <div class="navbar-nav ms-auto">
-          <a href="index.html" class="nav-item nav-link active">Home</a>
-          <a href="about.html" class="nav-item nav-link">Sobre</a>
-          <a href="service.html" class="nav-item nav-link">Serviços</a>
+          <a href="index.html#home" class="nav-item nav-link">Home</a>
+          <a href="index.html#about" class="nav-item nav-link">Sobre</a>
+          <a href="index.html#service" class="nav-item nav-link">Serviços</a>
         </div>
         <a href="index.html#indicate" class="btn btn-primary"
           >Indique Agora<i class="fa fa-arrow-right ms-3"></i
@@ -87,14 +87,14 @@
     <!-- Navbar End -->
 
     <!-- Header Start -->
-    <div class="container-fluid bg-dark p-0 mb-5">
+    <div class="container-fluid bg-dark p-0 mb-5" id="home">
       <div class="row g-0 flex-column-reverse flex-lg-row">
         <div class="col-lg-6 p-0 wow fadeIn" data-wow-delay="0.1s">
           <div
             class="header-bg h-100 d-flex flex-column justify-content-center p-5"
           >
             <h1 class="display-4 text-light mb-5">
-              Enjoy Wonderful Day With Your Family
+              JÁ PENSOU GANHAR DINHEIRO INDICANDO?
             </h1>
             <div class="d-flex align-items-center pt-4 animated slideInDown">
               <a href="" class="btn btn-primary py-sm-3 px-3 px-sm-5 me-5"
@@ -170,7 +170,7 @@
     <!-- Video Modal End -->
 
     <!-- About Start -->
-    <div class="container-xxl py-5">
+    <div class="container-xxl py-5" id="about">
       <div class="container">
         <div class="row g-5">
           <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -205,7 +205,7 @@
     <!-- About End -->
 
     <!-- Service Start -->
-    <div class="container-xxl py-5">
+    <div class="container-xxl py-5" id="service">
       <div class="container">
         <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
           <div class="col-lg-6">
@@ -234,13 +234,12 @@
             data-wow-delay="0.1s"
           >
             <img class="img-fluid mb-3" src="img/icon/icon-2.png" alt="Icon" />
-            <h5 class="mb-3">Car Parking</h5>
+            <h5 class="mb-3">Mecânica</h5>
             <span
-              >Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem
-              sed diam stet diam sed stet.</span
+              >Serviço completo de mecânica para seu carro</span
             >
           </div>
-          <div
+          <!-- <div
             class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp"
             data-wow-delay="0.3s"
           >
@@ -316,14 +315,14 @@
               >Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem
               sed diam stet diam sed stet.</span
             >
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
     <!-- Service End -->
 
     <!-- Testimonial Start -->
-    <div class="container-xxl py-5">
+    <!-- <div class="container-xxl py-5">
       <div class="container">
         <h1
           class="display-5 text-center mb-5 wow fadeInUp"
@@ -388,7 +387,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="container-xxl py-5" id="indicate">
       <div class="container">
@@ -424,8 +423,9 @@
               <input
                 type="text"
                 class="form-control border-0 w-100 py-2 ps-3 pe-4"
-                name="Telefone"
-                id="telefone"
+                name="Telefone Indicante"
+                id="telefone-indicante"
+                maxlength="15"
                 placeholder="(00) 00000-0000"
                 required
               />
@@ -437,64 +437,59 @@
               <select
                 class="form-control py-2 ps-3 pe-4"
                 name="Recebimento via"
-                id=""
+                id="receipt-way"
                 required
               >
                 <option value="pix">PIX</option>
                 <option value="ted">TED</option>
               </select>
             </div>
-            <div class="col-12 col-md-4 form-group mt-3">
+            <div class="col-12 col-md-4 form-group mt-3 key-type">
               <h6 class="mb-3">Tipo de chave PIX:</h6>
-              <select class="form-control py-2 ps-3 pe-4" name="Tipo de Chave PIX" id="">
-                <option value="CPF">CPF</option>
-                <option value="CNPJ">CNPJ</option>
+              <select class="form-control py-2 ps-3 pe-4" name="Tipo de Chave PIX" id="key-type">
+                <option value="CPF/CNPJ">CPF/CNPJ</option>
                 <option value="Telefone">Telefone</option>
-                <option value="Email">Email</option>
-                <option value="Chave Aleatória">Chave Aleatória</option>
               </select>
             </div>
-            <div class="col-12 col-md-4 mt-4">
+            <div class="col-12 col-md-4 mt-4 key-pix">
               <h6 class="mb-3">Chave PIX:</h6>
               <input
                 class="form-control border-0 w-100 py-2 ps-3 pe-4"
                 type="text"
                 name="Chave PIX"
+                id="key-pix"
                 placeholder="Chave PIX"
               />
             </div>
-            <div class="col-12 col-md-3 form-group mt-3">
+            <div class="col-12 col-md-3 form-group mt-3 d-none agency">
               <h6 class="mb-3">Agência</h6>
               <input
                 type="text"
                 class="form-control border-0 w-100 py-2 ps-3 pe-4"
                 name="Agência"
-                id="subject"
+                id="agency"
                 placeholder="00000"
-                required
               />
             </div>
-            <div class="col-6 col-md-3 form-group mt-3">
+            <div class="col-6 col-md-3 form-group mt-3 d-none account">
               <h6 class="mb-3">Conta</h6>
               <input
                 type="number"
                 class="form-control border-0 w-100 py-2 ps-3 pe-4"
                 name="Conta"
-                id="subject"
+                id="account"
                 placeholder="0000"
-                required
               />
             </div>
-            <div class="col-6 col-md-3 form-group mt-3">
+            <div class="col-6 col-md-2 form-group mt-3 d-none digit">
               <h6 class="mb-3">Dígito</h6>
               <input
                 type="number"
                 class="form-control border-0 w-100 py-2 ps-3 pe-4"
                 name="Dígito"
-                id="subject"
+                id="digit"
                 placeholder="0"
                 maxlength="1"
-                required
               />
             </div>
             <div class="row mb-3">
@@ -524,7 +519,7 @@
                   class="form-control border-0 w-100 py-2 ps-3 pe-4"
                   type="text"
                   placeholder="(00) 00000-0000"
-                  id="telefone-indicanted"
+                  id="telefone-indicado"
                 />
               </div>
             </div>
@@ -550,28 +545,22 @@
       <div class="container py-5">
         <div class="row g-5">
           <div class="col-lg-3 col-md-6">
-            <h5 class="text-light mb-4">Address</h5>
+            <h5 class="text-light mb-4">Endereço</h5>
             <p class="mb-2">
-              <i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA
+              <i class="fa fa-map-marker-alt me-3"></i>Rua 
             </p>
             <p class="mb-2">
-              <i class="fa fa-phone-alt me-3"></i>+012 345 67890
+              <i class="fa fa-phone-alt me-3"></i>(31) 99999-9999
             </p>
             <p class="mb-2">
-              <i class="fa fa-envelope me-3"></i>info@example.com
+              <i class="fa fa-envelope me-3"></i>contato@example.com
             </p>
             <div class="d-flex pt-2">
-              <a class="btn btn-outline-light btn-social" href=""
-                ><i class="fab fa-twitter"></i
-              ></a>
               <a class="btn btn-outline-light btn-social" href=""
                 ><i class="fab fa-facebook-f"></i
               ></a>
               <a class="btn btn-outline-light btn-social" href=""
                 ><i class="fab fa-youtube"></i
-              ></a>
-              <a class="btn btn-outline-light btn-social" href=""
-                ><i class="fab fa-linkedin-in"></i
               ></a>
             </div>
           </div>
@@ -581,14 +570,6 @@
             <a class="btn btn-link" href="service.html">Serviços</a>
             <a class="btn btn-link" href="index.html#indicate">Indique Agora</a>
             <a class="btn btn-link" href="">Termos e Condições</a>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <h5 class="text-light mb-4">Popular Links</h5>
-            <a class="btn btn-link" href="">About Us</a>
-            <a class="btn btn-link" href="">Contact Us</a>
-            <a class="btn btn-link" href="">Our Services</a>
-            <a class="btn btn-link" href="">Terms & Condition</a>
-            <a class="btn btn-link" href="">Support</a>
           </div>
         </div>
       </div>
