@@ -42,22 +42,56 @@
         } else {
           displayError(thisForm, 'The reCaptcha javascript API url is not loaded!');
         }
-      } else if (formInvalid(formData)) {
-        displayError(thisForm, 'Formulário inválido');
+      } else if (formInvalid(thisForm)) {
+        return;
       } else {
         email_form_submit(thisForm, action, formData);
       }
     });
   });
 
-  function formInvalid() {
+  function formInvalid(thisForm) {
+    let message = '';
     const indicatePhone = getById('telefone-indicante');
-    if (indicatePhone.length != 15) {
-      return true;
+    indicatePhone.classList.remove('error-form');
+    if (indicatePhone.value.length != 15) {
+      indicatePhone.classList.add('error-form');
+      message += 'Telefone de quem indica está inválido! <br>';
     }
 
     const indicatedPhone = getById('telefone-indicado');
-    if (indicatedPhone.length != 15) {
+    indicatedPhone.classList.remove('error-form');
+    if (indicatedPhone.value.length != 15) {
+      indicatedPhone.classList.add('error-form');
+      message += 'Telefone do indicado está inválido! <br>';
+    }
+
+    const receiptWay = getById('receipt-way');
+    const keyType = getById('key-type');
+    const keyPix = getById('key-pix');
+    const cpf_cnpj = getById('cpf/cnpj');
+    keyPix.classList.remove('error-form');
+    if (receiptWay.value === 'pix') {
+      if (keyType.value === 'CPF/CNPJ' && (keyPix.value.length != 14 && keyPix.value.length != 18)) {
+        keyPix.classList.add('error-form');
+        message += 'Chave PIX inválida! <br>';
+      } else if (keyType.value === 'Telefone' && keyPix.value.length != 15) {
+        keyPix.classList.add('error-form');
+        message += 'Chave PIX inválida! <br>';
+      }
+    } else if (receiptWay.value === 'ted') {
+      if (keyType.value === 'CPF/CNPJ' && (keyPix.value.length != 14 && keyPix.value.length != 18)) {
+        keyPix.classList.add('error-form');
+        message += 'Chave PIX inválida! <br>';
+      } else if (keyType.value === 'Telefone' && keyPix.value.length != 15) {
+        keyPix.classList.add('error-form');
+        message += 'Chave PIX inválida! <br>';
+      }
+    }
+    
+
+    if (message) {
+      displayError(thisForm, message);
       return true;
     }
   }
@@ -90,9 +124,6 @@
   }
 
   function displayError(thisForm, error) {
-    console.log(error);
-    console.log(JSON.stringify(error));
-    console.log(error.ok);
     if (!error.ok || error.ok !== 'true') {
       thisForm.querySelector('.loading').classList.remove('d-block');
       thisForm.querySelector('.error-message').innerHTML = error;
@@ -109,6 +140,10 @@
 
   function maskTel(value) {
     value = value.replace(/\D/g, ""); //Remove tudo o que não é dígito
+    if (value.length > 11) {
+      value = value.substr(0, 11)
+    }
+
     value = value.replace(/^(\d{2})(\d)/g, "($1) $2"); //Coloca parênteses em volta dos dois primeiros dígitos
     value = value.replace(/(\d)(\d{4})$/, "$1-$2"); //Coloca hífen entre o quarto e o quinto dígitos
     return value;
@@ -160,11 +195,17 @@
       accountClass[0].classList.add('d-none');
       const accountId = getById('account');
       accountId.removeAttribute('required');
-      
+
       const digitClass = getByClassName('digit');
       digitClass[0].classList.add('d-none');
       const digitId = getById('digit');
       digitId.removeAttribute('required');
+
+
+      const CPFCNPJClass = getByClassName('cpf-cnpj');
+      CPFCNPJClass[0].classList.add('d-none');
+      const CPFCNPJId = getById('cpf/cnpj');
+      CPFCNPJId.removeAttribute('required');
     } else {
       const keyTypeClass = getByClassName('key-type');
       keyTypeClass[0].classList.add('d-none');
@@ -185,11 +226,16 @@
       accountClass[0].classList.remove('d-none');
       const accountId = getById('account');
       accountId.setAttribute('required', '');
-      
+
       const digitClass = getByClassName('digit');
       digitClass[0].classList.remove('d-none');
       const digitId = getById('digit');
       digitId.setAttribute('required', '');
+
+      const CPFCNPJClass = getByClassName('cpf-cnpj');
+      CPFCNPJClass[0].classList.remove('d-none');
+      const CPFCNPJId = getById('cpf/cnpj');
+      CPFCNPJId.setAttribute('required', '');
     }
   }
 
@@ -219,6 +265,10 @@
 
   getById('receipt-way').onchange = function () {
     setReceiptWay(this);
+  }
+
+  getById('cpf/cnpj').onkeyup = function () {
+    getInputMask(this, maskCPFCNPJ);
   }
 
 })();

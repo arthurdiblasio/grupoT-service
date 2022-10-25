@@ -100,4 +100,12 @@
 
 })(jQuery);
 
+const SERVICES = ['Mecânico', 'Seguro', 'Festa'];
+const servicesSelect = document.getElementById('service-select');
+SERVICES.forEach((language) => {
+  option = new Option(language, language);
+  servicesSelect.options[servicesSelect.options.length] = option;
+});
+
+
 

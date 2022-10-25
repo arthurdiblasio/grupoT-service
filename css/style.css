@@ -13,6 +13,11 @@
   z-index: 99;
 }
 
+@font-face {
+  font-family: 'Gothic';
+  src: url('../lib/fonts/YuGothicUI-SemiLight.ttf') format('opentype');
+  font-weight: normal;
+}
 
 .btn.btn-primary {
   background-color: var(--primary) !important;
@@ -116,7 +121,7 @@
 .navbar .dropdown-toggle::after {
   border: none;
   content: "\f107";
-  font-family: "Font Awesome 5 Free";
+  font-family: 'Gothic';
   font-weight: 900;
   vertical-align: middle;
   margin-left: 8px;
@@ -591,7 +596,7 @@
 .footer .btn.btn-link::before {
   position: relative;
   content: "\f105";
-  font-family: "Font Awesome 5 Free";
+  font-family: 'Gothic';
   font-weight: 900;
   margin-right: 10px;
 }
@@ -663,4 +668,8 @@
 
 .d-none {
   display: none;
+}
+
+.error-form {
+  border: 4px solid rgba(177, 27, 27, .3) !important;
 }

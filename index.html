@@ -55,7 +55,7 @@
       </div>
     </div>
     <!-- Spinner End -->
-    
+
     <!-- Navbar Start -->
     <nav
       class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-lg-0 px-4 px-lg-5 wow fadeIn"
@@ -97,7 +97,9 @@
               JÁ PENSOU GANHAR DINHEIRO INDICANDO?
             </h1>
             <div class="d-flex align-items-center pt-4 animated slideInDown">
-              <a href="" class="btn btn-primary py-sm-3 px-3 px-sm-5 me-5"
+              <a
+                href="index.html#about"
+                class="btn btn-primary py-sm-3 px-3 px-sm-5 me-5"
                 >Leia Mais</a
               >
               <button
@@ -180,17 +182,20 @@
               dinheiro indicando serviços!
             </h1>
             <p class="mb-4">
-              Indique clientes para os serviços disponíveis abaixo e assim que eles fecharem o serviço, 
-              você recebe seu bônus por indicação! 
+              Indique clientes para os serviços disponíveis abaixo e assim que
+              eles fecharem o serviço, você recebe seu bônus por indicação!
             </p>
             <h5 class="mb-3">
-              <i class="far fa-check-circle text-primary me-3"></i>Recebimento via PIX ou TED
+              <i class="far fa-check-circle text-primary me-3"></i>Recebimento
+              via PIX ou TED
             </h5>
             <h5 class="mb-3">
-              <i class="far fa-check-circle text-primary me-3"></i>Sem Burocracia
+              <i class="far fa-check-circle text-primary me-3"></i>Sem
+              Burocracia
             </h5>
             <h5 class="mb-3">
-              <i class="far fa-check-circle text-primary me-3"></i>Recebimento em até 3 dias úteis após o fechamento
+              <i class="far fa-check-circle text-primary me-3"></i>Recebimento
+              em até 3 dias úteis após o fechamento
             </h5>
             <!-- <a class="btn btn-primary py-3 px-5 mt-3" href="about.html">Leia Mais</a> -->
           </div>
@@ -235,9 +240,7 @@
           >
             <img class="img-fluid mb-3" src="img/icon/icon-2.png" alt="Icon" />
             <h5 class="mb-3">Mecânica</h5>
-            <span
-              >Serviço completo de mecânica para seu carro</span
-            >
+            <span>Serviço completo de mecânica para seu carro</span>
           </div>
           <!-- <div
             class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp"
@@ -407,7 +410,7 @@
             <h4 class="mb-3 wow fadeInUp fw-bold" data-wow-delay="0.1s">
               Informações de quem indica:
             </h4>
-            <div class="col-12 col-md-6 form-group">
+            <div class="col-12 col-md-6 col-lg-4 form-group mt-3">
               <h6 class="mb-3">Seu Nome</h6>
               <input
                 type="text"
@@ -418,7 +421,7 @@
                 required
               />
             </div>
-            <div class="col-12 col-md-6 form-group mt-3 mt-md-0">
+            <div class="col-12 col-md-6 col-lg-4 form-group mt-3">
               <h6 class="mb-3">Seu telefone (Preferencialmente WhatsApp)</h6>
               <input
                 type="text"
@@ -430,12 +433,10 @@
                 required
               />
             </div>
-            <div class="col-12 col-md-4 form-group mt-3">
-              <h6 class="mb-3">
-                Como deseja receber sua indicação?
-              </h6>
+            <div class="col-12 col-md-6 col-lg-4 form-group mt-3">
+              <h6 class="mb-3">Como deseja receber sua indicação?</h6>
               <select
-                class="form-control py-2 ps-3 pe-4"
+                class="form-select py-2 ps-3 pe-4"
                 name="Recebimento via"
                 id="receipt-way"
                 required
@@ -444,14 +445,18 @@
                 <option value="ted">TED</option>
               </select>
             </div>
-            <div class="col-12 col-md-4 form-group mt-3 key-type">
+            <div class="col-12 col-md-6 col-lg-4 form-group mt-3 key-type">
               <h6 class="mb-3">Tipo de chave PIX:</h6>
-              <select class="form-control py-2 ps-3 pe-4" name="Tipo de Chave PIX" id="key-type">
+              <select
+                class="form-select py-2 ps-3 pe-4"
+                name="Tipo de Chave PIX"
+                id="key-type"
+              >
                 <option value="CPF/CNPJ">CPF/CNPJ</option>
                 <option value="Telefone">Telefone</option>
               </select>
             </div>
-            <div class="col-12 col-md-4 mt-4 key-pix">
+            <div class="col-12 col-md-6 col-lg-4 mt-3 key-pix">
               <h6 class="mb-3">Chave PIX:</h6>
               <input
                 class="form-control border-0 w-100 py-2 ps-3 pe-4"
@@ -461,7 +466,19 @@
                 placeholder="Chave PIX"
               />
             </div>
-            <div class="col-12 col-md-3 form-group mt-3 d-none agency">
+            <div
+              class="col-12 col-md-6 col-lg-4 form-group mt-3 d-none cpf-cnpj"
+            >
+              <h6 class="mb-3">CPF/CNPJ</h6>
+              <input
+                type="text"
+                class="form-control border-0 w-100 py-2 ps-3 pe-4"
+                name="CPF/CNPJ"
+                id="cpf/cnpj"
+                placeholder="Digite um CPF ou CNPJ"
+              />
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 form-group mt-3 d-none agency">
               <h6 class="mb-3">Agência</h6>
               <input
                 type="text"
@@ -471,7 +488,7 @@
                 placeholder="00000"
               />
             </div>
-            <div class="col-6 col-md-3 form-group mt-3 d-none account">
+            <div class="col-6 col-md-2 form-group mt-3 d-none account">
               <h6 class="mb-3">Conta</h6>
               <input
                 type="number"
@@ -496,8 +513,8 @@
               <h4 class="mb-3 mt-3 wow fadeInUp fw-bold" data-wow-delay="0.1s">
                 Informações do indicado:
               </h4>
-              <div class="col-12 col-md-4 mt-4">
-                <h6 class="mb-3">Nome:</h6>
+              <div class="col-12 col-md-6 col-lg-4 mt-4">
+                <h6 class="mb-3">Nome</h6>
                 <input
                   name="Nome do Indicado"
                   class="form-control border-0 w-100 py-2 ps-3 pe-4"
@@ -505,15 +522,16 @@
                   placeholder="Seu nome"
                 />
               </div>
-              <div class="col-12 col-md-4 mt-4">
-                <h6 class="mb-3">Escolha o serviço prestado:</h6>
-                <select class="form-control py-2 ps-3 pe-4" name="Serviço Prestado" id="">
-                  <option value="">Mecânico</option>
-                  <option value="">fdsa</option>
-                </select>
+              <div class="col-12 col-md-6 col-lg-4 mt-4">
+                <h6 class="mb-3">Escolha o serviço prestado</h6>
+                <select
+                  class="form-select py-2 ps-3 pe-4"
+                  name="Serviço Prestado"
+                  id="service-select"
+                ></select>
               </div>
-              <div class="col-12 col-md-4 mt-4">
-                <h6 class="mb-3">Telefone do Indicado:</h6>
+              <div class="col-12 col-lg-4 mt-4">
+                <h6 class="mb-3">Telefone (Preferencialmente WhatsApp)</h6>
                 <input
                   name="Telefone do Indicado"
                   class="form-control border-0 w-100 py-2 ps-3 pe-4"
@@ -530,7 +548,9 @@
             <div class="sent-message">Sua indicação foi enviada. Obrigado!</div>
           </div>
           <div class="text-center">
-            <button class="mt-4 btn btn-primary" type="submit">Enviar Indicação</button>  
+            <button class="mt-4 btn btn-primary" type="submit">
+              Enviar Indicação
+            </button>
           </div>
         </form>
       </div>
@@ -546,9 +566,7 @@
         <div class="row g-5">
           <div class="col-lg-3 col-md-6">
             <h5 class="text-light mb-4">Endereço</h5>
-            <p class="mb-2">
-              <i class="fa fa-map-marker-alt me-3"></i>Rua 
-            </p>
+            <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Rua</p>
             <p class="mb-2">
               <i class="fa fa-phone-alt me-3"></i>(31) 99999-9999
             </p>
@@ -566,8 +584,8 @@
           </div>
           <div class="col-lg-3 col-md-6">
             <h5 class="text-light mb-4">Acesso Rápido</h5>
-            <a class="btn btn-link" href="about.html">Sobre</a>
-            <a class="btn btn-link" href="service.html">Serviços</a>
+            <a class="btn btn-link" href="index.html#about">Sobre</a>
+            <a class="btn btn-link" href="index.html#service">Serviços</a>
             <a class="btn btn-link" href="index.html#indicate">Indique Agora</a>
             <a class="btn btn-link" href="">Termos e Condições</a>
           </div>
@@ -597,8 +615,12 @@
     <!-- <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
       ><i class="bi bi-arrow-up"></i
     ></a> -->
-    <a href="https://api.whatsapp.com/send?phone=51955081075&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="float" target="_blank">
-    <i class="fab fa-whatsapp my-float"></i>
+    <a
+      href="https://api.whatsapp.com/send?phone=51955081075&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202."
+      class="float"
+      target="_blank"
+    >
+      <i class="fab fa-whatsapp my-float"></i>
     </a>
 
     <!-- JavaScript Libraries -->
