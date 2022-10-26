@@ -72,28 +72,114 @@
     const cpf_cnpj = getById('cpf/cnpj');
     keyPix.classList.remove('error-form');
     if (receiptWay.value === 'pix') {
-      if (keyType.value === 'CPF/CNPJ' && (keyPix.value.length != 14 && keyPix.value.length != 18)) {
-        keyPix.classList.add('error-form');
-        message += 'Chave PIX inválida! <br>';
+      if (keyType.value === 'CPF/CNPJ') {
+        if (keyPix.value.length != 14 && keyPix.value.length != 18) {
+          keyPix.classList.add('error-form');
+          message += 'Chave PIX inválida! <br>';
+        } else if (keyPix.value.length === 14 && !validCPF(keyPix.value.replace(/\D/g, ""))) {
+          keyPix.classList.add('error-form');
+          message += 'CPF inválido! <br>';
+        } else if (keyPix.value.length === 18 && !validCNPJ(keyPix.value.replace(/\D/g, ""))) {
+          keyPix.classList.add('error-form');
+          message += 'CNPJ inválido! <br>';
+        }
       } else if (keyType.value === 'Telefone' && keyPix.value.length != 15) {
         keyPix.classList.add('error-form');
         message += 'Chave PIX inválida! <br>';
       }
     } else if (receiptWay.value === 'ted') {
-      if (keyType.value === 'CPF/CNPJ' && (keyPix.value.length != 14 && keyPix.value.length != 18)) {
-        keyPix.classList.add('error-form');
+      if (cpf_cnpj.value.length != 14 && cpf_cnpj.value.length != 18) {
+        cpf_cnpj.classList.add('error-form');
         message += 'Chave PIX inválida! <br>';
-      } else if (keyType.value === 'Telefone' && keyPix.value.length != 15) {
-        keyPix.classList.add('error-form');
-        message += 'Chave PIX inválida! <br>';
+      } else if (cpf_cnpj.value.length === 14 && !validCPF(cpf_cnpj.value.replace(/\D/g, ""))) {
+        cpf_cnpj.classList.add('error-form');
+        message += 'CPF inválido! <br>';
+      } else if (cpf_cnpj.value.length === 18 && !validCNPJ(cpf_cnpj.value.replace(/\D/g, ""))) {
+        cpf_cnpj.classList.add('error-form');
+        message += 'CNPJ inválido! <br>';
       }
     }
-    
+
 
     if (message) {
       displayError(thisForm, message);
       return true;
     }
+  }
+
+  function validCPF(strCPF) {
+    let Soma;
+    let Resto;
+    Soma = 0;
+    if (strCPF == "00000000000") return false;
+
+    for (let i = 1; i <= 9; i++) Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (11 - i);
+    Resto = (Soma * 10) % 11;
+
+    if ((Resto == 10) || (Resto == 11)) Resto = 0;
+    if (Resto != parseInt(strCPF.substring(9, 10))) return false;
+
+    Soma = 0;
+    for (let i = 1; i <= 10; i++) Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (12 - i);
+    Resto = (Soma * 10) % 11;
+
+    if ((Resto == 10) || (Resto == 11)) Resto = 0;
+    if (Resto != parseInt(strCPF.substring(10, 11))) return false;
+    return true;
+  }
+
+  function validCNPJ(cnpj) {
+
+    cnpj = cnpj.replace(/[^\d]+/g, '');
+
+    if (cnpj == '') return false;
+
+    if (cnpj.length != 14)
+      return false;
+
+    // Elimina CNPJs invalidos conhecidos
+    if (cnpj == "00000000000000" ||
+      cnpj == "11111111111111" ||
+      cnpj == "22222222222222" ||
+      cnpj == "33333333333333" ||
+      cnpj == "44444444444444" ||
+      cnpj == "55555555555555" ||
+      cnpj == "66666666666666" ||
+      cnpj == "77777777777777" ||
+      cnpj == "88888888888888" ||
+      cnpj == "99999999999999")
+      return false;
+
+    // Valida DVs
+    let tamanho = cnpj.length - 2
+    let numeros = cnpj.substring(0, tamanho);
+    let digitos = cnpj.substring(tamanho);
+    let soma = 0;
+    let pos = tamanho - 7;
+    for (let i = tamanho; i >= 1; i--) {
+      soma += numeros.charAt(tamanho - i) * pos--;
+      if (pos < 2)
+        pos = 9;
+    }
+    let resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+    if (resultado != digitos.charAt(0))
+      return false;
+
+    tamanho = tamanho + 1;
+    numeros = cnpj.substring(0, tamanho);
+    soma = 0;
+    pos = tamanho - 7;
+    for (i = tamanho; i >= 1; i--) {
+      soma += numeros.charAt(tamanho - i) * pos--;
+      if (pos < 2)
+        pos = 9;
+    }
+    resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+    if (resultado != digitos.charAt(1))
+      return false;
+
+    return true;
+
   }
 
   function email_form_submit(thisForm, action, formData) {
@@ -151,6 +237,9 @@
 
   function maskCPFCNPJ(value) {
     value = value.replace(/\D/g, "");
+    if (value.length > 14) {
+      value = value.substr(0, 14)
+    }
     if (value.length <= 11) {
       value = value.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})/g, "$1.$2.$3-$4");
       return value;
