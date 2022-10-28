@@ -249,6 +249,10 @@
     }
   }
 
+  function inputOnlyLetters(value) {
+    return value.replace(/[0-9]/g, '');
+  }
+
   function setKeyPIXMask(object) {
     const objectKeyType = getById('key-type');
     switch (objectKeyType.value) {
@@ -358,6 +362,18 @@
 
   getById('cpf/cnpj').onkeyup = function () {
     getInputMask(this, maskCPFCNPJ);
+  }
+
+  getById('name').onkeyup = function () {
+    getInputMask(this, inputOnlyLetters);
+  }
+
+  getById('name-indicated').onkeyup = function () {
+    getInputMask(this, inputOnlyLetters);
+  }
+
+  getById('digit').onkeyup = function () {
+    this.value = this.value.substring(0, 1)
   }
 
 })();
