@@ -294,6 +294,10 @@
       const digitId = getById('digit');
       digitId.removeAttribute('required');
 
+      const bankClass = getByClassName('bank');
+      bankClass[0].classList.add('d-none');
+      const bankId = getById('bank');
+      bankId.removeAttribute('required');
 
       const CPFCNPJClass = getByClassName('cpf-cnpj');
       CPFCNPJClass[0].classList.add('d-none');
@@ -329,6 +333,11 @@
       CPFCNPJClass[0].classList.remove('d-none');
       const CPFCNPJId = getById('cpf/cnpj');
       CPFCNPJId.setAttribute('required', '');
+
+      const bankClass = getByClassName('bank');
+      bankClass[0].classList.remove('d-none');
+      const bankId = getById('bank');
+      bankId.setAttribute('required', '');
     }
   }
 
