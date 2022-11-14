@@ -92,14 +92,14 @@
       data-wow-delay="0.1s"
     >
       <div class="container py-5">
-        <h1 class="display-4 text-white mb-3 animated slideInDown">Sobre</h1>
+        <h1 class="display-4 text-white mb-3 animated slideInDown">Indicação</h1>
         <nav aria-label="breadcrumb animated slideInDown">
           <ol class="breadcrumb mb-0">
             <li class="breadcrumb-item">
               <a class="text-white" href="#">Home</a>
             </li>
             <li class="breadcrumb-item text-primary active" aria-current="page">
-              Sobre
+              Indicação
             </li>
           </ol>
         </nav>
@@ -107,63 +107,194 @@
     </div>
     <!-- Page Header End -->
 
-    <!-- About Start -->
-    <div class="container-xxl py-5" id="about">
+    <!-- Indicate Start -->
+    <div class="container-xxl py-5" id="indicate">
       <div class="container">
-        <div class="row g-5">
-          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-            <p><span class="text-primary me-2">#</span>Quem Somos</p>
-            <h2 class="mb-4">
-              O que é a <span class="text-primary">Group T</span>?
-            </h2>
-            <p class="mb-4">
-              Seja bem-vindo a Group T, uma nova forma de melhorar seu
-              faturamento dando a você a oportunidade de ganhar dinheiro sem
-              sair de casa.
-            </p>
-            <p>
-              A Group T reuniu os melhores fornecedores de produtos e serviços
-              do mercado, oferecendo gratificação para os parceiros que
-              indicarem suas marcas.
-            </p>
-            <h5 class="mb-4">Sobre a Group T</h5>
-            <p>
-              Você já se viu em uma roda de conversa quando alguém pergunta
-              “você conhece alguém que...”.
-            </p>
-            <p>
-              Então, a Group T foi criada com intuito de ligar esta pessoa à
-              empresa que ela deseja fazer o serviço ou compra, e você que
-              sempre deu indicação, mas nunca ganhou nada, poderá ganhar uma
-              gratificação em dinheiro com a Group T.
-            </p>
-            <h5 class="mb-4">Como faço para indicar?</h5>
-            <p>
-              Após a pergunta na roda de conversa, você entra no site
-              www.groupt.com e clica na área
-              <a href="index.html#indicate"> <b>QUERO INDICAR </b></a>. Você
-              preencherá os dados da pessoa indicada (nome, telefone e serviço
-              que irá indicar) e preencherá seus dados (nome, telefone, chave
-              PIX ou agência e conta).
-            </p>
-            <p>
-              A partir daí, a Group T ficará por conta do resto, e assim que sua
-              indicação concluir o negócio com nossos parceiros, agendamos o
-              pagamento em sua conta. - SIMPLES ASSIM -
-            </p>
-            <!-- <a class="btn btn-primary py-3 px-5 mt-3" href="about.html">Leia Mais</a> -->
-          </div>
-          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-            <div class="img-border">
-              <img class="img-fluid" src="img/about.jpg" alt="" />
+        <h1
+          class="display-5 text-center mb-5 wow fadeInUp"
+          data-wow-delay="0.1s"
+        >
+          Indique seu cliente
+        </h1>
+        <form
+          action="https://formspree.io/f/mzbwvqya"
+          method="post"
+          role="form"
+          class="php-email-form"
+        >
+          <div class="row">
+            <h4 class="mb-3 wow fadeInUp fw-bold" data-wow-delay="0.1s">
+              Informações de quem indica:
+            </h4>
+            <div class="col-12 col-md-6 col-lg-4 form-group mt-3">
+              <h6 class="mb-3">Seu Nome</h6>
+              <input
+                type="text"
+                name="Nome"
+                class="form-control border-0 w-100 py-2 ps-3 pe-4"
+                id="name"
+                placeholder="João da Silva"
+                required
+              />
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 form-group mt-3">
+              <h6 class="mb-3">Seu telefone (Preferencialmente WhatsApp)</h6>
+              <input
+                type="text"
+                class="form-control border-0 w-100 py-2 ps-3 pe-4"
+                name="Telefone Indicante"
+                id="telefone-indicante"
+                maxlength="15"
+                placeholder="(00) 00000-0000"
+                required
+              />
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 form-group mt-3">
+              <h6 class="mb-3">Como deseja receber sua indicação?</h6>
+              <select
+                class="form-select py-2 ps-3 pe-4"
+                name="Recebimento via"
+                id="receipt-way"
+                required
+              >
+                <option value="pix">PIX</option>
+                <option value="ted">TED</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 form-group mt-3 key-type">
+              <h6 class="mb-3">Tipo de chave PIX:</h6>
+              <select
+                class="form-select py-2 ps-3 pe-4"
+                name="Tipo de Chave PIX"
+                id="key-type"
+              >
+                <option value="CPF/CNPJ">CPF/CNPJ</option>
+                <option value="Telefone">Telefone</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mt-3 key-pix">
+              <h6 class="mb-3">Chave PIX:</h6>
+              <input
+                class="form-control border-0 w-100 py-2 ps-3 pe-4"
+                type="text"
+                name="Chave PIX"
+                id="key-pix"
+                placeholder="Chave PIX"
+              />
+            </div>
+            <div
+              class="col-12 col-md-6 col-lg-3 form-group mt-3 d-none cpf-cnpj"
+            >
+              <h6 class="mb-3">CPF/CNPJ</h6>
+              <input
+                type="text"
+                class="form-control border-0 w-100 py-2 ps-3 pe-4"
+                name="CPF/CNPJ"
+                id="cpf/cnpj"
+                placeholder="Digite um CPF ou CNPJ"
+              />
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 form-group mt-3 d-none bank">
+              <h6 class="mb-3">Banco</h6>
+              <select
+                class="form-select py-2 ps-3 pe-4"
+                name="Banco"
+                id="bank"
+              ></select>
+            </div>
+            <div class="col-12 col-md-6 col-lg-2 form-group mt-3 d-none agency">
+              <h6 class="mb-3">Agência</h6>
+              <input
+                type="number"
+                class="form-control border-0 w-100 py-2 ps-3 pe-4"
+                name="Agência"
+                id="agency"
+                placeholder="00000"
+              />
+            </div>
+            <div class="col-6 col-md-2 form-group mt-3 d-none account">
+              <h6 class="mb-3">Conta</h6>
+              <input
+                type="number"
+                class="form-control border-0 w-100 py-2 ps-3 pe-4"
+                name="Conta"
+                id="account"
+                placeholder="0000"
+              />
+            </div>
+            <div class="col-6 col-md-2 form-group mt-3 d-none digit">
+              <h6 class="mb-3">Dígito</h6>
+              <input
+                type="number"
+                class="form-control border-0 w-100 py-2 ps-3 pe-4"
+                name="Dígito"
+                id="digit"
+                placeholder="0"
+                maxlength="1"
+              />
+            </div>
+            <div class="row mb-3">
+              <h4 class="mb-3 mt-3 wow fadeInUp fw-bold" data-wow-delay="0.1s">
+                Informações do indicado:
+              </h4>
+              <div class="col-12 col-md-6 col-lg-4 mt-4">
+                <h6 class="mb-3">Nome</h6>
+                <input
+                  name="Nome do Indicado"
+                  class="form-control border-0 w-100 py-2 ps-3 pe-4"
+                  type="text"
+                  id="name-indicated"
+                  placeholder="Nome"
+                />
+              </div>
+              <div class="col-12 col-md-6 col-lg-4 mt-4">
+                <h6 class="mb-3">Escolha o serviço prestado</h6>
+                <select
+                  class="form-select py-2 ps-3 pe-4"
+                  name="Serviço Prestado"
+                  id="service-select"
+                ></select>
+              </div>
+              <div class="col-12 col-lg-4 mt-4">
+                <h6 class="mb-3">Telefone (Preferencialmente WhatsApp)</h6>
+                <input
+                  name="Telefone do Indicado"
+                  class="form-control border-0 w-100 py-2 ps-3 pe-4"
+                  type="text"
+                  placeholder="(00) 00000-0000"
+                  id="telefone-indicado"
+                />
+              </div>
+              <div class="col-12">
+                <h6 class="mb-3 mt-3">Observação</h6>
+                <textarea
+                  name="Observação"
+                  class="form-control border-0 w-100 py-2 ps-3 pe-4"
+                  type="text"
+                  placeholder="Insira alguma observação que achar relevante para sua indicação"
+                  id="obs"
+                  rows="3"
+                  maxlength="300"
+                ></textarea>
+              </div>
             </div>
           </div>
-        </div>
+          <div class="my-3">
+            <div class="loading">Enviando Indicação...</div>
+            <div class="error-message"></div>
+            <div class="sent-message">
+              Sua indicação foi enviada. Em breve entraremos em contato contigo.
+            </div>
+          </div>
+          <div class="text-center">
+            <button class="mt-4 btn btn-primary" type="submit">
+              Enviar Indicação
+            </button>
+          </div>
+        </form>
       </div>
     </div>
-    <!-- About End -->
-    <!-- About End -->
-
+    <!-- Indicate End -->
 
     <!-- Footer Start -->
     <div
@@ -239,6 +370,7 @@
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="js/validate.js"></script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>

@@ -180,7 +180,7 @@
 /*** Header ***/
 .header-bg {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url(../img/bg-1.jpg) center center no-repeat;
+    url(https://placeholder.com/) center center no-repeat;
   background-size: cover;
 }
 
@@ -378,13 +378,12 @@
 /*** Facts & Visiting Hours ***/
 .facts {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url(../img/bg-1.jpg) center center no-repeat;
+    url(https://placeholder.com/) center center no-repeat;
   background-size: cover;
 }
 
 .visiting-hours {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url(../img/bg-2.jpg) center center no-repeat;
+  background: rgba(0, 0, 0, 0.7);
   background-size: cover;
 }
 
@@ -560,8 +559,7 @@
 
 /*** Footer ***/
 .footer {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url(../img/bg-2.jpg) center center no-repeat;
+  background: rgba(0, 0, 0, 0.7);
   background-size: cover;
 }
 
@@ -621,14 +619,14 @@
   color: var(--primary);
 }
 
-.php-email-form {
+.php-email-form, .php-email-form-doubts {
   width: 100%;
-  background: var(--color-white);
+  background: var(--color-white, -white);
 }
-.php-email-form .form-group {
+.php-email-form .form-group, .php-email-form-doubts .form-group {
   padding-bottom: 8px;
 }
-.php-email-form .error-message {
+.php-email-form .error-message, .php-email-form-doubts .error-message {
   display: none;
   color: var(--color-white);
   background: var(--color-red);
@@ -636,10 +634,10 @@
   padding: 15px;
   font-weight: 600;
 }
-.php-email-form .error-message br + br {
+.php-email-form .error-message br + br, .php-email-form-doubts .error-message br + br {
   margin-top: 25px;
 }
-.php-email-form .sent-message {
+.php-email-form .sent-message, .php-email-form-doubts .sent-message {
   display: none;
   color: var(--color-white);
   background: var(--color-green);
@@ -647,13 +645,13 @@
   padding: 15px;
   font-weight: 600;
 }
-.php-email-form .loading {
+.php-email-form .loading, .php-email-form-doubts .loading {
   display: none;
   background: var(--color-white);
   text-align: center;
   padding: 15px;
 }
-.php-email-form .loading:before {
+.php-email-form .loading:before, .php-email-form-doubts .loading:before {
   content: "";
   display: inline-block;
   border-radius: 50%;

@@ -1,14 +1,11 @@
-/**
-* PHP Email Form Validation - v3.2
-* URL: https://bootstrapmade.com/php-email-form/
-* Author: BootstrapMade.com
-*/
+
 (function () {
   "use strict";
 
-  let forms = document.querySelectorAll('.php-email-form');
+  let formsInvitedInvited = document.querySelectorAll('.php-email-form');
+  let formsDoubts = document.querySelectorAll('.php-email-form-doubts');
 
-  forms.forEach(function (e) {
+  formsInvitedInvited.forEach(function (e) {
     e.addEventListener('submit', function (event) {
       event.preventDefault();
 
@@ -43,6 +40,48 @@
           displayError(thisForm, 'The reCaptcha javascript API url is not loaded!');
         }
       } else if (formInvalid(thisForm)) {
+        return;
+      } else {
+        email_form_submit(thisForm, action, formData);
+      }
+    });
+  });
+
+  formsDoubts.forEach(function (e) {
+    e.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      let thisForm = this;
+      let action = thisForm.getAttribute('action');
+      let recaptcha = thisForm.getAttribute('data-recaptcha-site-key');
+
+      if (!action) {
+        displayError(thisForm, 'The form action property is not set!')
+        return;
+      }
+      thisForm.querySelector('.loading').classList.add('d-block');
+      thisForm.querySelector('.error-message').classList.remove('d-block');
+      thisForm.querySelector('.sent-message').classList.remove('d-block');
+
+      let formData = new FormData(thisForm);
+
+      if (recaptcha) {
+        if (typeof grecaptcha !== "undefined") {
+          grecaptcha.ready(function () {
+            try {
+              grecaptcha.execute(recaptcha, { action: 'email_form_submit' })
+                .then(token => {
+                  formData.set('recaptcha-response', token);
+                  email_form_submit(thisForm, action, formData);
+                })
+            } catch (error) {
+              displayError(thisForm, error)
+            }
+          });
+        } else {
+          displayError(thisForm, 'The reCaptcha javascript API url is not loaded!');
+        }
+      } else if (formInvalidDoubts(thisForm)) {
         return;
       } else {
         email_form_submit(thisForm, action, formData);
@@ -100,6 +139,20 @@
       }
     }
 
+    if (message) {
+      displayError(thisForm, message);
+      return true;
+    }
+  }
+
+  function formInvalidDoubts(thisForm) {
+    let message = '';
+    const phone = getById('phone');
+    phone.classList.remove('error-form');
+    if (phone.value.length != 15) {
+      phone.classList.add('error-form');
+      message += 'Telefone inválido! <br>';
+    }
 
     if (message) {
       displayError(thisForm, message);
@@ -354,6 +407,11 @@
   }
 
   getById('telefone-indicado').onkeyup = function () {
+    getInputMask(this, maskTel);
+  }
+
+  getById('phone').onkeyup = function () {
+    console.log('resr');
     getInputMask(this, maskTel);
   }
 

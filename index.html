@@ -75,11 +75,12 @@
       </button>
       <div class="collapse navbar-collapse py-4 py-lg-0" id="navbarCollapse">
         <div class="navbar-nav ms-auto">
-          <a href="index.html#home" class="nav-item nav-link">Home</a>
-          <a href="index.html#about" class="nav-item nav-link">Sobre</a>
-          <a href="index.html#service" class="nav-item nav-link">Serviços</a>
+          <a href="index.html" class="nav-item nav-link active">Home</a>
+          <a href="about.html" class="nav-item nav-link">Sobre</a>
+          <a href="partner.html" class="nav-item nav-link">Seja um Parceiro</a>
+          <a href="service.html" class="nav-item nav-link">Serviços</a>
         </div>
-        <a href="index.html#indicate" class="btn btn-primary"
+        <a href="indicate.html" class="btn btn-primary"
           >QUERO INDICAR<i class="fa fa-arrow-right ms-3"></i
         ></a>
       </div>
@@ -403,76 +404,8 @@
       </div>
     </div>
     <!-- Service End -->
-
-    <!-- Testimonial Start -->
-    <!-- <div class="container-xxl py-5">
-      <div class="container">
-        <h1
-          class="display-5 text-center mb-5 wow fadeInUp"
-          data-wow-delay="0.1s"
-        >
-          Opinião de Clientes
-        </h1>
-        <div
-          class="owl-carousel testimonial-carousel wow fadeInUp"
-          data-wow-delay="0.1s"
-        >
-          <div class="testimonial-item text-center">
-            <img
-              class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4"
-              src="img/testimonial-1.jpg"
-              style="width: 100px; height: 100px"
-            />
-            <div class="testimonial-text rounded text-center p-4">
-              <p>
-                Clita clita tempor justo dolor ipsum amet kasd amet duo justo
-                duo duo labore sed sed. Magna ut diam sit et amet stet eos sed
-                clita erat magna elitr erat sit sit erat at rebum justo sea
-                clita.
-              </p>
-              <h5 class="mb-1">Patient Name</h5>
-              <span class="fst-italic">Profession</span>
-            </div>
-          </div>
-          <div class="testimonial-item text-center">
-            <img
-              class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4"
-              src="img/testimonial-2.jpg"
-              style="width: 100px; height: 100px"
-            />
-            <div class="testimonial-text rounded text-center p-4">
-              <p>
-                Clita clita tempor justo dolor ipsum amet kasd amet duo justo
-                duo duo labore sed sed. Magna ut diam sit et amet stet eos sed
-                clita erat magna elitr erat sit sit erat at rebum justo sea
-                clita.
-              </p>
-              <h5 class="mb-1">Patient Name</h5>
-              <span class="fst-italic">Profession</span>
-            </div>
-          </div>
-          <div class="testimonial-item text-center">
-            <img
-              class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4"
-              src="img/testimonial-3.jpg"
-              style="width: 100px; height: 100px"
-            />
-            <div class="testimonial-text rounded text-center p-4">
-              <p>
-                Clita clita tempor justo dolor ipsum amet kasd amet duo justo
-                duo duo labore sed sed. Magna ut diam sit et amet stet eos sed
-                clita erat magna elitr erat sit sit erat at rebum justo sea
-                clita.
-              </p>
-              <h5 class="mb-1">Patient Name</h5>
-              <span class="fst-italic">Profession</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
-
-    <div class="container-xxl py-5" id="indicate">
+    <!-- 
+     <div class="container-xxl py-5" id="indicate">
       <div class="container">
         <h1
           class="display-5 text-center mb-5 wow fadeInUp"
@@ -638,7 +571,7 @@
                   placeholder="Insira alguma observação que achar relevante para sua indicação"
                   id="obs"
                   rows="3"
-                  maxlength="10"
+                  maxlength="300"
                 ></textarea>
               </div>
             </div>
@@ -646,7 +579,7 @@
           <div class="my-3">
             <div class="loading">Enviando Indicação...</div>
             <div class="error-message"></div>
-            <div class="sent-message">Sua indicação foi enviada. Obrigado!</div>
+            <div class="sent-message">Sua indicação foi enviada. Em breve entraremos em contato contigo. </div>
           </div>
           <div class="text-center">
             <button class="mt-4 btn btn-primary" type="submit">
@@ -655,8 +588,98 @@
           </div>
         </form>
       </div>
+    </div> -->
+
+    <!-- Doubts Start -->
+    <div class="container-xxl py-5" id="doubts">
+      <div class="container">
+        <p><span class="text-primary me-2">#</span>Dúvidas</p>
+        <h5 class="mb-4">
+          Em caso de dúvidas, sugestões ou reclamações, favor preencher o
+          formulário abaixo.
+        </h5>
+        <form
+          action="https://formspree.io/f/mwkzybpd"
+          method="post"
+          role="form"
+          class="php-email-form-doubts"
+        >
+          <div class="row">
+            <div class="col-12 col-md-6 col-lg-3 form-group mt-3">
+              <h6 class="mb-3">Nome</h6>
+              <input
+                type="text"
+                name="Nome"
+                class="form-control border-0 w-100 py-2 ps-3 pe-4"
+                id="name"
+                placeholder="João da Silva"
+                required
+              />
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 form-group mt-3">
+              <h6 class="mb-3">Telefone</h6>
+              <input
+                type="text"
+                class="form-control border-0 w-100 py-2 ps-3 pe-4"
+                name="Telefone"
+                id="phone"
+                maxlength="15"
+                placeholder="(00) 00000-0000"
+                required
+              />
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mt-3 key-pix">
+              <h6 class="mb-3">Email</h6>
+              <input
+                class="form-control border-0 w-100 py-2 ps-3 pe-4"
+                type="email"
+                name="Email"
+                id="email"
+                placeholder="Seu melhor email"
+              />
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 form-group mt-3">
+              <h6 class="mb-3">Tipo</h6>
+              <select
+                class="form-select py-2 ps-3 pe-4"
+                name="Tipo"
+                id="type"
+                required
+              >
+                <option value="Dúvidas">Dúvidas</option>
+                <option value="Sugestões">Sugestões</option>
+                <option value="Reclamações">Reclamações</option>
+              </select>
+            </div>
+
+            <div class="col-12">
+              <h6 class="mb-3 mt-3">Assunto</h6>
+              <textarea
+                name="Observação"
+                class="form-control border-0 w-100 py-2 ps-3 pe-4"
+                type="text"
+                placeholder="Insira sua dúvida, reclamação ou sugestão"
+                id="obs"
+                rows="3"
+                maxlength="300"
+                required
+              ></textarea>
+            </div>
+          </div>
+          <div class="my-3">
+            <div class="loading">Enviando...</div>
+            <div class="error-message"></div>
+            <div class="sent-message">
+              Mensagem enviada! Obrigado por nos ajudar a sermos melhores a cada dia!
+            </div>
+          </div>
+          <div class="text-center">
+            <button class="mt-4 btn btn-primary" type="submit">Enviar</button>
+          </div>
+        </form>
+      </div>
     </div>
-    <!-- Testimonial End -->
+    <!-- Doubts End -->
 
     <!-- Footer Start -->
     <div
@@ -690,9 +713,10 @@
           </div>
           <div class="col-lg-3 col-md-6">
             <h5 class="text-light mb-4">Acesso Rápido</h5>
-            <a class="btn btn-link" href="index.html#about">Sobre</a>
-            <a class="btn btn-link" href="index.html#service">Serviços</a>
-            <a class="btn btn-link" href="index.html#indicate">Quero Indicar</a>
+            <a class="btn btn-link" href="about.html">Sobre</a>
+            <a class="btn btn-link" href="service.html">Serviços</a>
+            <a class="btn btn-link" href="partner.html">Seja Um parceiro</a>
+            <a class="btn btn-link" href="indicate.html">Quero Indicar</a>
             <a class="btn btn-link" href="terms.html">Termos e Condições</a>
           </div>
         </div>
@@ -715,10 +739,6 @@
     </div>
     <!-- Footer End -->
 
-    <!-- Back to Top -->
-    <!-- <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
-      ><i class="bi bi-arrow-up"></i
-    ></a> -->
     <a
       href="https://api.whatsapp.com/send?phone=31988236763&text=Olá! Gostaria de mais Informações a respeito da Group T."
       class="float"
