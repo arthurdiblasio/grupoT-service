@@ -100,12 +100,41 @@
 
 })(jQuery);
 
-const SERVICES = ['Mecânico', 'Seguro', 'Festa'];
-const servicesSelect = document.getElementById('service-select');
-SERVICES.forEach((language) => {
+function getServices() {
+  const SERVICES = ['Mecânico', 'Seguro', 'Festa'];
+  const servicesSelect = document.getElementById('service-select');
+  SERVICES.forEach((language) => {
   option = new Option(language, language);
-  servicesSelect.options[servicesSelect.options.length] = option;
-});
+    servicesSelect.options[servicesSelect.options.length] = option;
+  });
+}
+
+function get(url) {
+  let request = new XMLHttpRequest();
+  request.open('GET', url, false)
+  request.send();
+  return JSON.parse(request.responseText);
+}
+
+async function getBanks() {
+  const banks = await get('https://brasilapi.com.br/api/banks/v1');
+  console.log(banks);
+  const banksOrdenedByCodeDesc = banks.sort((a,b) => {
+    return a.code > b.code ? 1 : -1;
+  })
+  const BANKSFORMATTED = banksOrdenedByCodeDesc.filter(bank => bank.code).map(bank => {
+    return `${bank.code} - ${bank.fullName}`;
+  })
+
+  const bankSelect = document.getElementById('bank');
+  BANKSFORMATTED.forEach((language) => {
+  option = new Option(language, language);
+  bankSelect.options[bankSelect.options.length] = option;
+  });
+}
+
+getBanks();
+getServices();
 
 
 
