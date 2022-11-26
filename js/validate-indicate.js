@@ -195,6 +195,8 @@
         if (status === 200) {
           thisForm.querySelector('.sent-message').classList.add('d-block');
           thisForm.reset();
+          const message = 'Sua indicação foi enviada.';
+          showSnackbar(message);
         } else {
           throw new Error(data ? data : 'Form submission failed and no error message returned from: ' + action);
         }
@@ -380,6 +382,17 @@
 
   getById('digit').onkeyup = function () {
     this.value = this.value.substring(0, 1)
+  }
+  
+  function showSnackbar(message) {
+    const snackbarDiv = document.getElementById("snackbar");
+
+    // Add the "show" class to DIV
+    snackbarDiv.className = "show";
+    snackbarDiv.innerText = message;
+
+    // After 3 seconds, remove the show class from DIV
+    setTimeout(function () { snackbarDiv.className = snackbarDiv.className.replace("show", ""); }, 3000);
   }
 
 })();
