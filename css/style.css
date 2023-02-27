@@ -179,8 +179,7 @@
 
 
 .header-bg {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url(https://placeholder.com/) center center no-repeat;
+  background: #1d2731;
   background-size: cover;
 }
 
@@ -361,18 +360,12 @@
   content: "";
   top: 0;
   left: 0;
-  right: 3rem;
-  bottom: 3rem;
-  border: 5px solid var(--primary);
 }
 
 .img-border img {
+  border: 4px solid var(--primary);
+  padding: 10px;
   position: absolute;
-  top: 3rem;
-  left: 3rem;
-  width: calc(100% - 3rem);
-  height: calc(100% - 3rem);
-  object-fit: cover;
 }
 
 
