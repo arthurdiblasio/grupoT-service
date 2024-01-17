@@ -194,9 +194,9 @@
                   <h6 class="mb-3">Razão Social</h6>
                   <input
                     type="text"
-                    name="Nome"
+                    name="Razão Social"
                     class="form-control border-1 w-100 py-2 ps-3 pe-4"
-                    id="name"
+                    id="razaoSocial"
                     placeholder="Empresa A"
                     required
                   />
@@ -222,7 +222,7 @@
                     required
                   />
                 </div>
-                <div class="col-12 col-md-6 col-lg-4 form-group mt-3">
+                <div class="col-12 col-md-6 col-lg-3 form-group mt-3">
                   <h6 class="mb-3">CNPJ</h6>
                   <input
                     type="text"
@@ -233,7 +233,7 @@
                     required
                   />
                 </div>
-                <div class="col-12 col-md-6 col-lg-4 form-group mt-3">
+                <div class="col-12 col-md-6 col-lg-3 form-group mt-3">
                   <h6 class="mb-3">Telefone (Preferencialmente WhatsApp)</h6>
                   <input
                     type="text"
@@ -246,7 +246,7 @@
                   />
                 </div>
                 <div
-                  class="col-12 col-md-6 col-lg-4 form-group mt-3"
+                  class="col-12 col-md-6 col-lg-3 form-group mt-3"
                   style="display: flex; flex-direction: column"
                 >
                   <h6 class="mb-3">Valor Indicação</h6>
@@ -257,7 +257,7 @@
                       name="Valor Indicação"
                       id="valor"
                       maxlength="8"
-                      placeholder="Valor será repassado à quem indicou"
+                      placeholder="Valor repassado à quem indicou"
                       style="flex: 10"
                       required
                     />
@@ -271,6 +271,19 @@
                       <option value="%">%</option>
                       <option value="R$">R$</option>
                     </select>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 form-group mt-3">
+                  <h6 class="mb-3">Email</h6>
+                  <div class="email">
+                    <input
+                      type="email"
+                      class="form-control border-1 w-80 py-2 ps-3 pe-4"
+                      name="Email"
+                      id="email"
+                      placeholder="Seu melhor email"
+                      required
+                    />
                   </div>
                 </div>
                 <div class="col-12 form-group mt-3">
@@ -295,9 +308,12 @@
                   contigo.
                 </div>
               </div>
+              <div>
+                Ao clicar em "Enviar Solicitação" você concorda com os <a target="_blank" href="./terms_of_use.pdf">termos de uso.</a>
+              </div>
               <div class="text-center">
                 <button class="mt-4 btn btn-primary" type="submit">
-                  Enviar Indicação
+                  Enviar Solicitação
                 </button>
               </div>
             </form>
